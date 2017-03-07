@@ -2,27 +2,8 @@ $(document).ready(function() {
 
 	//create buttons from topics
 	var topics = ["moon", "stars", "comet", "black hole", "earth", "alien"];
-	
-	
-/*	$(document).on("click", ".add-space", addTopic);
-	
-	function addTopic() {
-
-		$("#add-space").on("click", function(event) {
-        // event.preventDefault() prevents submit button from trying to send a form.
-        // Using a submit button instead of a regular button allows the user to hit
-        // "Enter" instead of clicking the button if desired
-        event.preventDefault();
-
-        // Write code to grab the text the user types into the input field
-
-        var topic = $("#space-input").val().trim();
-        // Write code to add the new movie into the movies array
-        topics.push(topic);
-        console.log(topics);
-
-    	});
-	}*/
+	renderButtons();
+    $(document).on("click", ".result", animatePause);	
 	
 //render the topics array to the page as buttons
 	function renderButtons() {
@@ -37,8 +18,6 @@ $(document).ready(function() {
 	          $(".buttons").append(buttons);
 	        };
 	};
-		
-	renderButtons();
 
 //use button data-name to create query url & make ajax call
 	$(".topics").on("click", showGiphs);
@@ -81,10 +60,7 @@ $(document).ready(function() {
         		};
 
          	});
-
     };
-
-     $(document).on("click", ".result", animatePause);
           		
      function animatePause() {
 		console.log($(this));
@@ -103,18 +79,32 @@ $(document).ready(function() {
 
 		    $(this).attr("src", $(this).attr("data-still"));
 		    $(this).attr("data-state", "still");
-  }
+  			}
 
-};
-
-	//get response and append to page - two gif versions to animate and pause
-
-        
+	};
 	
 
+ $("#add-topic").on("click", function(event) {
+        // event.preventDefault() prevents submit button from trying to send a form.
+        // Using a submit button instead of a regular button allows the user to hit
+        // "Enter" instead of clicking the button if desired
+        event.preventDefault();
+
+        // Write code to grab the text the user types into the input field
+
+        var topic = $("#space-input").val().trim();
+        // Write code to add the new movie into the movies array
+        topics.push(topic);
+        console.log(topics);
+        // The renderButtons function is called, rendering the list of movie buttons
+        renderButtons();
+        
+      });
+
+      $(document).on("click", ".topics", showGiphs);
 
 
-	//};
+
 
 //console.logs
 console.log(topics);
