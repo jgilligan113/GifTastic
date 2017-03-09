@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
 	//create buttons from topics
-	var topics = ["moon", "stars", "comet", "black hole", "earth", "alien"];
-	renderButtons();
-    $(document).on("click", ".result", animatePause);	
+	var topics = ["Really?", "OMG", "Can't Even!", "Totes"];
+	//renderButtons();
+    	
 	
 //render the topics array to the page as buttons
 	function renderButtons() {
@@ -26,10 +26,10 @@ $(document).ready(function() {
 		$(".responseList").empty();
 		console.log($(this).attr("data-name"));
 
-    	var space = $(this).attr("data-name");
+    	var term = $(this).attr("data-name");
       
-     	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-        space + "&api_key=dc6zaTOxFJmzC&limit=10";
+     	var queryURL = "http://api.giphy.com/v1/gifs/search?q=funny+" +
+        term + "&api_key=dc6zaTOxFJmzC&limit=10";
 
       	$.ajax({
         	url: queryURL,
@@ -41,21 +41,23 @@ $(document).ready(function() {
         	for ( i = 0; i < results.length; i++ ) {
 	        	
 	         	var rating = results[i].rating;
-	         	var imageStill = results[i].images.fixed_width_still.url;
-	         	var imageAnim = results[i].images.fixed_width.url;
+	         	var imageStill = results[i].images.fixed_height_still.url;
+	         	var imageAnim = results[i].images.fixed_height.url;
 	         	var dataState = "still";
 
 	         	console.log(results[i].images.fixed_width.url);
 	         	console.log(results[i].images.fixed_width_still.url);
 	         	console.log(results[i].rating);
 
+	         	var gifCard = $("<div>").addClass("gifCards");
 	         	var p1 = $("<p>").text("Rating: " + rating);
 	         	var image2 = $("<img>").attr("src", imageStill);
 	         	image2.attr("data-still", imageStill);
 	         	image2.attr("data-animate", imageAnim);
 	         	image2.attr("data-state", dataState);
          		image2.addClass("result");
-         		$(".responseList").append(p1, image2);
+         		gifCard.append(p1, image2);
+         		$(".responseList").append(gifCard);
 
         		};
 
@@ -85,14 +87,14 @@ $(document).ready(function() {
 	
 
  $("#add-topic").on("click", function(event) {
+        // Adapted from class example, modified for homework
         // event.preventDefault() prevents submit button from trying to send a form.
         // Using a submit button instead of a regular button allows the user to hit
         // "Enter" instead of clicking the button if desired
         event.preventDefault();
 
-        // Write code to grab the text the user types into the input field
-
-        var topic = $("#space-input").val().trim();
+        // Write code to grab the text the user types into the input field, trim removes spaces before and after string
+        var topic = $("#addButton-input").val().trim();
         // Write code to add the new movie into the movies array
         topics.push(topic);
         console.log(topics);
@@ -101,7 +103,10 @@ $(document).ready(function() {
         
       });
 
-      $(document).on("click", ".topics", showGiphs);
+	
+	$(document).on("click", ".topics", showGiphs);
+	$(document).on("click", ".result", animatePause);
+	renderButtons();
 
 
 

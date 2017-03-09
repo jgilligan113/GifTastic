@@ -1,0 +1,55 @@
+.gifCards {
+
+	float:left;
+	margin: 10px;
+}
+
+.btn-info {
+
+	margin:4px;
+	font-family: 'VT323', monospace;
+	font-size: 24px;
+
+}
+
+input {
+
+	margin: 2px;
+}
+
+#jumboTitle {
+
+	font-family: 'Lobster', cursive;
+	font-size: 90px;
+	color:#656565;
+}
+
+.footer {
+
+	background-color: gray;
+	text-align: center;
+	opacity:0.5;
+	padding-top:10px;
+	padding-bottom: 6px;
+	font-family: 'VT323', monospace;
+	font-size: 24px;
+	color:white;
+	
+}
+
+#jumboText{
+
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+	color:#656565;
+}
+
+body{
+	height:100%;
+	background-color: #656565;
+	color:white;
+}
+.input-group {
+	width:50%;
+}
+
