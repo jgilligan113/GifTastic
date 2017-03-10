@@ -1,3 +1,10 @@
+.jumbotron{
+	background-color: #F5C4A4;
+	border-color:#FAEED8;
+	border-style: solid;
+	border-width: 4px;
+}
+
 .gifCards {
 
 	float:left;
@@ -6,9 +13,7 @@
 
 .btn-info {
 
-	margin:4px;
-	font-family: 'VT323', monospace;
-	font-size: 24px;
+
 
 }
 
@@ -21,19 +26,24 @@ input {
 
 	font-family: 'Lobster', cursive;
 	font-size: 90px;
-	color:#656565;
+	color:#363636;
+	text-shadow: -2px -2px 0 #FAEED8,
+	2px -2px 0 #FAEED8,
+	-2px 2px 0 #FAEED8,
+	2px 2px 0 #FAEED8;
+	background-color: #F5C4A4;
 }
 
 .footer {
 
-	background-color: gray;
+	background-color: #FAEED8;
 	text-align: center;
 	opacity:0.5;
 	padding-top:10px;
 	padding-bottom: 6px;
-	font-family: 'VT323', monospace;
+	font-family: 'Lobster', cursive;
 	font-size: 24px;
-	color:white;
+	color:#363636;
 	
 }
 
@@ -41,15 +51,51 @@ input {
 
 	font-family: 'VT323', monospace;
 	font-size: 30px;
-	color:#656565;
+	color:#363636;
 }
 
 body{
 	height:100%;
-	background-color: #656565;
-	color:white;
+	background-color: #363636;
+	color:#FAEED8;
 }
 .input-group {
 	width:50%;
+}
+.btn-default{
+	background-image:none;
+	background-color:#F5C4A4;
+	color:#363636;
+	border-color:#363636;
+	font-family: 'VT323', monospace;
+}
+
+.btn-default:focus, .btn-default:hover{
+	background-color:#FFB18C;
+}
+
+.btn-info {
+	background-image:none;
+	background-color: #FFB18C;
+	outline-color: #FAEED8;
+	border-color:#FAEED8;
+	font-family: 'VT323', monospace;
+	font-size: 18px;
+	color:#363636;
+	margin:4px;
+
+}
+
+.btn-info:focus, .btn-info:hover {
+	background-image:none;
+	background-color: #F5C4A4;
+	border-color: #F5C4A4;
+	color:#FAEED8;
+
+}
+.form-control {
+	background-color:#FAEED8;
+	color:#363636;
+	border-color:#363636;
 }
 

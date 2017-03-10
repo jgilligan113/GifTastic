@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	//create buttons from topics
-	var topics = ["Really?", "OMG", "Can't Even!", "Totes"];
+	var topics = ["Really?", "OMG", "I can't even!", "Totes", "SMH"];
 	//renderButtons();
     	
 	
@@ -95,11 +95,14 @@ $(document).ready(function() {
 
         // Write code to grab the text the user types into the input field, trim removes spaces before and after string
         var topic = $("#addButton-input").val().trim();
+        //check that a value was entered and if not, ask for one...
+        if (topic == "") {alert("No giphy for you... enter some fun stuff!")} else{
         // Write code to add the new movie into the movies array
         topics.push(topic);
+        console.log(topic);
         console.log(topics);
         // The renderButtons function is called, rendering the list of movie buttons
-        renderButtons();
+        renderButtons();}
         
       });
 
